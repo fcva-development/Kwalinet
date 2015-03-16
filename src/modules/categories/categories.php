@@ -7,6 +7,9 @@
 	// First of, check if the user came to this page via a header
 	if(isset($_GET['iCategoryID'])) {
 		
+		// Include the header file
+		include ('../../templates/header.php');
+		
 		// Fetch the GET parameters from the header
 		$iCategoryID = $_GET['iCategoryID'];
 		//$sReturnTo	 = $_GET['sReturnTo'];
@@ -48,6 +51,9 @@
 			// Indicate end of debugging
 			echo '<br /><br />--DEBUG END--<br />';
 		}
+		
+		// Include the footer file
+		include ('../../templates/footer.php');
 		
 	} else {
 		// If the user came her illegally
