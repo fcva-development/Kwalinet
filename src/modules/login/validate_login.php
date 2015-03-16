@@ -4,16 +4,17 @@ include '../../php/conf_db.php';
 
 	if($_POST)
 	{
-		if($_POST['username'] != '' && $_POST['password'] != '')//if not empty
+		if($_POST['sUsername'] != '' && $_POST['sPassword'] != '')//if not empty
 		{
 			$sUsername = $_POST['sUsername'];
 			$sPassword = md5($_POST['sPassword']);
 			
+			echo $sPassword.' '.$sUsername;
 		
 			$sql = "SELECT *
 				FROM test_users
 				WHERE user_name = '" . $sUsername . "'
-				AND user_pass = '" . md5($sPassword) . "'"
+				AND user_password = '" . md5($sPassword) . "'"
 				;
 				
 			$query = mysqli_query($con, $sql);
@@ -21,7 +22,7 @@ include '../../php/conf_db.php';
 		
 			if(mysqli_num_rows($query) == 0)
 			{
-				echo 'Fout bij inloggen. U word teruggestuurd.';
+				echo 'EEN Fout bij inloggen. U word teruggestuurd.';
 				header('Refresh: 3; url=index.php');
 			}
 			else
