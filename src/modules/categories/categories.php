@@ -5,7 +5,7 @@
 
 
 	// First of, check if the user came to this page via a header
-	if(!isset($_GET)) {
+	if(isset($_GET)) {
 		
 		// Fetch the GET parameters from the header
 		$iCategoryID = $_GET['iCategoryID'];
@@ -50,7 +50,7 @@
 		
 	} else {
 		// If the user came her illegally
-		header("Location: ../../../../index.php");
+		header("Location: ../../../index.php");
 	}
 	
 ?>
