@@ -3,10 +3,6 @@
 # Created by:		MRH
 # Last edit by:		LHG
 
-
-// Include the header file
-include ('../../templates/header.php');
-
 	// First of, check if the user came to this page via a header
 	if(isset($_GET['iCategoryID'])) {
 		
@@ -56,8 +52,5 @@ include ('../../templates/header.php');
 		// If the user came her illegally
 		header("Location: ../../../index.php");
 	}
-
-// Include the footer file
-include ('../../templates/footer.php');
 	
 ?>
