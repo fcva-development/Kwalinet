@@ -16,7 +16,7 @@ else $sPage = 'home'; //$_SESSION['User']['Loggedin'];
 //else $sPage = $_GET['page_view'];
 
 include 'modules/'.$sPage.'/'.$sPage.'.php'; 
-
+echo "Ebola4Life";
 ?>
 
 </div>
