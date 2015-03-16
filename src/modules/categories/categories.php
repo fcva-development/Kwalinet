@@ -19,7 +19,7 @@ include ('../../templates/header.php');
 			// If category ID is not an integer,
 			// send user back from whence they came
 			// until they are complete again
-			echo 'niet toegestaan';
+			echo 'niet toegestaan ' . $iCategoryID;
 			header("Location: " /*. $sReturnTo*/);
 		} else {
 			// If everything was okay, proceed
