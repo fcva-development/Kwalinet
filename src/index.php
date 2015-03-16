@@ -11,12 +11,11 @@ include 'template/header.php';
 
 <?PHP
 
-if($_SESSION['User']['Loggedin'] == false) $sPage = 'home';
-else $sPage = 'home'; //$_SESSION['User']['Loggedin'];
-//else $sPage = $_GET['page_view'];
+if($_SESSION['User']['Loggedin'] == false) $sPage = 'login';
+else $sPage = $_SESSION['User']['Loggedin'];
 
 include 'modules/'.$sPage.'/'.$sPage.'.php'; 
-echo "Ebola4Life";
+
 ?>
 
 </div>
