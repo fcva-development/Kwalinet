@@ -12,7 +12,7 @@
 		//$sReturnTo	 = $_GET['sReturnTo'];
 		
 		// Check if the values are the correct datatype
-		if(!Is_integer($iCategoryID)) {
+		if($iCategoryID >= 0) {
 			// If category ID is not an integer,
 			// send user back from whence they came
 			// until they are complete again
