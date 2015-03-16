@@ -7,7 +7,7 @@ include '../../php/conf_db.php';
 		if($_POST['sUsername'] != '' && $_POST['sPassword'] != '')//if not empty
 		{
 			$sUsername = $_POST['sUsername'];
-			$sPassword = md5($_POST['sPassword']);
+			$sPassword = $_POST['sPassword'];
 			
 			echo $sPassword.' '.$sUsername;
 		
