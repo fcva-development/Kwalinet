@@ -5,18 +5,19 @@
 
 
 	// First of, check if the user came to this page via a header
-	if(isset($_GET)) {
+	if(isset($_GET['iCategoryID'])) {
 		
 		// Fetch the GET parameters from the header
 		$iCategoryID = $_GET['iCategoryID'];
-		$sReturnTo	 = $_GET['sReturnTo'];
+		//$sReturnTo	 = $_GET['sReturnTo'];
 		
 		// Check if the values are the correct datatype
 		if(!Is_integer($iCategoryID)) {
 			// If category ID is not an integer,
 			// send user back from whence they came
 			// until they are complete again
-			header("Location: " . $sReturnTo);
+			echo 'niet toegestaan';
+			header("Location: " /*. $sReturnTo*/);
 		} else {
 			// If everything was okay, proceed
 			// Firstly, include database file
