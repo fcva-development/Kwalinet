@@ -16,6 +16,8 @@ else $sPage = $_SESSION['User']['Loggedin'];
 
 include 'modules/'.$sPage.'/'.$sPage.'.php'; 
 
+echo "<pre>".print_r($_SESSION,true)."</pre>";
+
 ?>
 
 </div>
