@@ -23,19 +23,20 @@ include '../../php/conf_db.php';
 			if(mysqli_num_rows($query) == 0)
 			{
 				echo 'EEN Fout bij inloggen. U word teruggestuurd.';
-				header('Refresh: 3; url=index.php');
+				header('Refresh: 3; url=../index.php');
 			}
 			else
 			{
 				$_SESSION['User']['Loggedin'] = true;
-				header('Refresh: 1; url=index.php');
+				$_SESSION['User']['PageView'] = 'home';
+				header('Refresh: 1; url=../index.php');
 			}
 		}
 		else
 		{
 		
 			echo 'Fout bij t inloggen. U word teruggestuurd.';
-			header('Refresh: 3; url=index.php');
+			header('Refresh: 3; url=../index.php');
 			
 		}
 	}else{

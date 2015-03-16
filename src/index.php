@@ -12,7 +12,7 @@ include 'template/header.php';
 <?PHP
 
 if($_SESSION['User']['Loggedin'] == false) $sPage = 'login';
-else $sPage = $_SESSION['User']['Loggedin'];
+else $sPage = $_SESSION['User']['PageView'];
 
 include 'modules/'.$sPage.'/'.$sPage.'.php'; 
 
