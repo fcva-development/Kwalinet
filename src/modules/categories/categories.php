@@ -4,11 +4,11 @@
 # Last edit by:		LHG
 
 
+// Include the header file
+include ('../../templates/header.php');
+
 	// First of, check if the user came to this page via a header
 	if(isset($_GET['iCategoryID'])) {
-		
-		// Include the header file
-		include ('../../templates/header.php');
 		
 		// Fetch the GET parameters from the header
 		$iCategoryID = $_GET['iCategoryID'];
@@ -52,12 +52,12 @@
 			echo '<br /><br />--DEBUG END--<br />';
 		}
 		
-		// Include the footer file
-		include ('../../templates/footer.php');
-		
 	} else {
 		// If the user came her illegally
 		header("Location: ../../../index.php");
 	}
+
+// Include the footer file
+include ('../../templates/footer.php');
 	
 ?>
