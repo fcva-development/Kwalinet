@@ -1,12 +1,8 @@
-<p>Welkom bij Kwalinet</p>
-
-<br><br>
-
-Hier onder vind je alle info over deze categorie:
-
-<br>
-
 <?php
+# File:				Categories.php
+# Created by: 		MRH
+# Last edit by:		LHG
+
 
 	// Fetch the GET parameters from the header
 	$iCategoryID = $_GET['iCategoryID'];
@@ -22,6 +18,8 @@ Hier onder vind je alle info over deze categorie:
 		// If everything was okay, proceed
 		// Firstly, include database file
 		include ('../../php/conf_db.php');
+		
+		// Construct query
 		$SQL = "SELECT * 
 				FROM test_subcategories
 				WHERE id IN(
@@ -31,15 +29,19 @@ Hier onder vind je alle info over deze categorie:
 							)
 				";
 		
+		// Fetch result from query
 		$result = $mysqli->query($SQL);
 		
+		// Show debug status
 		echo '--DEBUG START--<br /><br />';
 		
+		// Print all query results to the screen
 		while($res = $result->fetch_assoc()) {
 			echo $res['title'] . '<br />';
 			echo $res['description'] . '<br /><br />';
 		}
 		
+		// Indicate end of debugging
 		echo '<br /><br />--DEBUG END--<br />';
 	}
 
