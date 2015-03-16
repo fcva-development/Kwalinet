@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include '../../php/conf_db.php';
 
@@ -9,8 +10,6 @@ include '../../php/conf_db.php';
 			$sUsername = $_POST['sUsername'];
 			$sPassword = $_POST['sPassword'];
 			
-			echo $sPassword.' '.$sUsername;
-		
 			$sql = "SELECT *
 				FROM test_users
 				WHERE user_name = '" . $sUsername . "'
@@ -18,8 +17,8 @@ include '../../php/conf_db.php';
 				;
 				
 			$query = mysqli_query($con, $sql);
-			$res = mysqli_fetch_array($query);
-		
+			$res = mysqli_fetch_assoc($query);
+			
 			if(mysqli_num_rows($query) == 0)
 			{
 				echo 'EEN Fout bij inloggen. U word teruggestuurd.';
@@ -27,9 +26,11 @@ include '../../php/conf_db.php';
 			}
 			else
 			{
+				$_SESSION['User']['UserID'] = $res['user_id'];
 				$_SESSION['User']['Loggedin'] = true;
 				$_SESSION['User']['PageView'] = 'home';
-				header('Refresh: 1; url=../index.php');
+				header('Location: ../../index.php');
+				echo "Klik <a href='../../index.php'>hier</a> om terug te gaan";
 			}
 		}
 		else

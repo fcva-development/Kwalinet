@@ -16,6 +16,8 @@ else $sPage = $_SESSION['User']['PageView'];
 
 include 'modules/'.$sPage.'/'.$sPage.'.php'; 
 
+echo '&copy; FCVA '.date(Y);
+
 echo "<pre>".print_r($_SESSION,true)."</pre>";
 
 ?>
